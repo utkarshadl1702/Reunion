@@ -1,0 +1,4 @@
+Orchestras (orchestra_id, orchestra_name, country)
+    └── Concerts (concert_id, orchestra_id (FK), location, date)
+        ├── Works (concert_id (FK), work_id, work_name)
+        └── Artists (concert_id (FK), artist_id, artist_name, instrument)

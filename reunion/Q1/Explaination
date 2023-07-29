@@ -1,0 +1,13 @@
+Explanation of the schema:
+
+Customers: This table will store information about customers, including their unique ID (customer_id) and other attributes like name, contact number, email, etc.
+
+Products: This table will contain information about the products available on the platform. Each product will have a unique ID (product_id) and other attributes like product name, description, etc.
+
+Variants: This table will store the different variants of products available, if applicable. It will have a unique ID (variant_id) and a foreign key reference to the Products table (product_id).
+
+Orders: This is the central fact table, containing information about customer orders. It will have a unique order ID (order_id) and foreign key references to the Customers table (customer_id).
+
+Prices: This table will store the historical changes in prices for products and variants. It will have a unique price ID (price_id) and foreign key references to both Products (product_id) and Variants (variant_id).
+
+Addresses: This table will store the historical changes in customer shipping addresses. It will have a unique address ID (address_id) and a foreign key reference to the Customers table (customer_id).

@@ -1,0 +1,48 @@
+                                        +---------------+
+                                        |   Customers   |
+                                        +---------------+
+                                        | - customer_id (Primary Key)
+                                        | - customer_name
+                                        | - contact_number
+                                        | - email
+                                        | - ... (other customer attributes)
+                                        +-------+-------+
+                                                |
+                                                |
++--------------+                +---------------------------+                +------------+
+|   Products   |                |          Orders           |                |   Variants  |
++--------------+                +---------------------------+                +------------+
+| - product_id (Primary Key)    | - order_id (Primary Key)  |                | - variant_id (Primary Key)
+| - product_name                | - customer_id (Foreign Key)|                | - product_id (Foreign Key)
+| - ... (other product attrs)   | - order_date              |                | - variant_name
++-------+------+                | - ... (other order attrs) |                | - ... (other variant attrs)
+        |                       +------------+--------------+                +-------+------+
+        |                                    |                                       |
+        |                                    |                                       |
+        |                                    |                                       |
++-------+------+                             |                                       |
+|   Prices    |                             |                                       |
++-------+------+                             |                                       |
+| - price_id (Primary Key)                   |                                       |
+| - product_id (Foreign Key)                 |                                       |
+| - variant_id (Foreign Key)                 |                                       |
+| - price                                   |                                       |
+| - start_date                              |                                       |
+| - end_date                                |                                       |
++-------+------+                             |                                       |
+        |                                    |                                       |
+        |                                    |                                       |
+        |                                    |                                       |
++-------+------+                             |                                       |
+|  Addresses  |                             |                                       |
++-------+------+                             |                                       |
+| - address_id (Primary Key)                 |                                       |
+| - customer_id (Foreign Key)                |                                       |
+| - shipping_address                        |                                       |
+| - city                                    |                                       |
+| - state                                   |                                       |
+| - postal_code                             |                                       |
+| - start_date                              |                                       |
+| - end_date                                |                                       |
++-------------------------------------------+---------------------------------------+
+
